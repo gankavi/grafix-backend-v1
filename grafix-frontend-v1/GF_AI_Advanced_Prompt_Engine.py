@@ -11,7 +11,7 @@ st.set_page_config(page_title="GraFix AI Studio - Prompt Builder", layout="wide"
 # -------------------
 st.markdown("""
     <div style="text-align:center;">
-        <img src="https://raw.githubusercontent.com/gankavi/grafix-backend-v1/main/grafix-frontend-v1/grafix%20ai%20studio%20name.png" width="500"/>
+        <img src="https://raw.githubusercontent.com/gankavi/grafix-backend-v1/main/grafix-frontend-v1/grafix%20ai%20studio%20name.png" width="1000"/>
     </div>
 """, unsafe_allow_html=True)
 
