@@ -9,7 +9,7 @@ st.set_page_config(page_title="GraFix AI Studio - Prompt Builder", layout="wide"
 # -------------------
 # BANNER
 # -------------------
-st.image("grafix ai studio name.png", use_container_width=True)
+st.image("https://raw.githubusercontent.com/gankavi/grafix-backend-v1/main/grafix-frontend-v1/grafix%20ai%20studio%20name.png", use_container_width=True)
 
 # -------------------
 # STYLE WRITING FORMATS
@@ -261,10 +261,10 @@ with open(file_path, "rb") as f:
     data = f.read()
     encoded = base64.b64encode(data).decode()
 
-# Create the footer with image
-footer = f"""
+# Footer
+footer = """
 <style>
-.footer {{
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -275,15 +275,15 @@ footer = f"""
     padding: 8px;
     font-size: 14px;
     z-index: 999;
-}}
-.footer img {{
+}
+.footer img {
     height: 16px;
     vertical-align: middle;
     margin-right: 6px;
-}}
+}
 </style>
 <div class="footer">
-    <img src="data:image/jpeg;base64,{encoded}" alt="G Logo">
+    <img src="https://raw.githubusercontent.com/gankavi/grafix-backend-v1/main/grafix-frontend-v1/images/G%20logo%20for%20favicon.jpg" alt="G Logo">
     GraFix AI Studio Advanced Prompt Engine V-1. Powered by: <strong>GraFix</strong>
 </div>
 """
