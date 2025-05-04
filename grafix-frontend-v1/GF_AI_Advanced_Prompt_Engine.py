@@ -9,7 +9,11 @@ st.set_page_config(page_title="GraFix AI Studio - Prompt Builder", layout="wide"
 # -------------------
 # BANNER
 # -------------------
-st.image("https://raw.githubusercontent.com/gankavi/grafix-backend-v1/main/grafix-frontend-v1/grafix%20ai%20studio%20name.png", use_container_width=True)
+st.markdown("""
+    <div style="text-align:center;">
+        <img src="https://raw.githubusercontent.com/gankavi/grafix-backend-v1/main/grafix-frontend-v1/grafix%20ai%20studio%20name.png" width="500"/>
+    </div>
+""", unsafe_allow_html=True)
 
 # -------------------
 # STYLE WRITING FORMATS
@@ -261,7 +265,6 @@ with open(file_path, "rb") as f:
     data = f.read()
     encoded = base64.b64encode(data).decode()
 
-# Footer
 footer = """
 <style>
 .footer {
@@ -287,5 +290,4 @@ footer = """
     GraFix AI Studio Advanced Prompt Engine V-1. Powered by: <strong>GraFix</strong>
 </div>
 """
-
 st.markdown(footer, unsafe_allow_html=True)
