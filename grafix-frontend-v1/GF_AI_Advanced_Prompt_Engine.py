@@ -259,12 +259,6 @@ with col2:
     st.download_button("⬇ Download Negative Prompt", negative_prompt, file_name="negative_prompt.txt")
 
 
-# Load the image and convert to base64
-file_path = "images/G logo for favicon.jpg"
-with open(file_path, "rb") as f:
-    data = f.read()
-    encoded = base64.b64encode(data).decode()
-
 footer = """
 <style>
 .footer {
