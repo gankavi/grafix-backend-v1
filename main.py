@@ -1,20 +1,31 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routes import router as prompt_router  # ✅ Import your router
 
+# App உருவாக்குதல்
 app = FastAPI()
 
-# ✅ Enable CORS
+# CORS policy (Frontend-க்கு அனுமதி)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can restrict this later to just frontend origin
-    allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ✅ Include API routes
-app.include_router(prompt_router)
+# Data Model உருவாக்குதல்
+class PromptRequest(BaseModel):
+    category: str
+    user_input: str
+
+# முதன்மை Route
 @app.get("/")
-def read_root():
+async def root():
     return {"message": "Grafix backend is live!"}
+
+# Prompt Generate Route
+@app.post("/generate-prompt")
+async def generate_prompt(req: PromptRequest):
+    # இந்த இடத்தில் Prompt generate logic எழுதவும்.
+    generated_prompt = f"{req.category}-க்கான Prompt: {req.user_input}"
+    return {"prompt": generated_prompt}
