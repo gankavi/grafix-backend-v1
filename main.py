@@ -15,3 +15,6 @@ app.add_middleware(
 
 # ✅ Include API routes
 app.include_router(prompt_router)
+@app.get("/")
+def read_root():
+    return {"message": "Grafix backend is live!"}
